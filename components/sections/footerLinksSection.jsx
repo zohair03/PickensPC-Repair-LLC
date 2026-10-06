@@ -259,7 +259,7 @@ const FooterLinks = () => {
         </p>
         <div className="mt-2 xl:mt-0 flex gap-2 justify-center align-middle items-center">
           <FoxframeWebLogo/>
-          <p className="text-xs sm:text-sm font-semibold text-white/80">Built by <Link href={"https://www.instagram.com/foxframe.web/"} target="_blank" className="underline underline-offset-3 decoration-white/40 hover:text-white hover:decoration-white/90  transition-colors duration-300 delay-150 ">Foxframe Web</Link></p>
+          <p className="text-xs sm:text-sm font-semibold text-white/80">Built by <Link href={"https://www.linkedin.com/in/zohair-ahmed-sheikh/"} target="_blank" className="underline underline-offset-3 decoration-white/40 hover:text-white hover:decoration-white/90  transition-colors duration-300 delay-150 ">Zohair Ahmed</Link></p>
         </div>
       </div>
     </footer>
