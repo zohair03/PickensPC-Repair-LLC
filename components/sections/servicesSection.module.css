@@ -1,0 +1,82 @@
+/* Services Section Optimization Styles */
+
+/* Prevent layout shifts during loading */
+.servicesSection {
+  min-height: 600px;
+  position: relative;
+}
+
+/* Ensure smooth transitions */
+.serviceCard {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Image loading animation */
+.imageFadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Skeleton loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Optimize for mobile devices */
+@media (max-width: 768px) {
+  .serviceCard {
+    transform: translateZ(0) translateY(var(--translate-y, 0));
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .serviceCard * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ensure proper image aspect ratio */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fix for Safari rendering issues */
+.serviceCard {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.servicesSection[data-mounted="true"] {
+  visibility: visible;
+}
+
+.servicesSection[data-mounted="false"] {
+  visibility: hidden;
+}
